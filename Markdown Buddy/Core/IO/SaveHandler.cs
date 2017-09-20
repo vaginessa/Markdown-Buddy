@@ -19,6 +19,7 @@ namespace Markdown_Buddy.Core.IO
             {
                 string getPath = SaveDialogHandler.SaveDialog();
                 if (getPath != "")
+                    // TODO: Fix crash when no path selected!
                     path = getPath;
             }
 
