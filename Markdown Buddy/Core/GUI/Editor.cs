@@ -42,6 +42,7 @@ namespace Markdown_Buddy.Core
         {
             this.CurrentDocument = document;
             this.Refresh();
+            this.unsavedChanges = false;
         }
 
         /// <summary>

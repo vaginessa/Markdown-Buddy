@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\GUI\Editor.cs" />
+    <Compile Include="Core\GUI\OpenDialogHandler.cs" />
     <Compile Include="Core\IO\Document.cs" />
     <Compile Include="Core\GUI\SaveDialogHandler.cs" />
     <Compile Include="Core\IO\SaveHandler.cs" />

@@ -52,5 +52,23 @@ namespace Markdown_Buddy.Core
         {
             SaveHandler.SaveString(this.Text, this.Path);
         }
+
+        /// <summary>
+        /// Opens and returns a reference to a document on disk
+        /// </summary>
+        /// <returns>Reference to the document, else null</returns>
+        public static Document Open()
+        {
+            string path = GUI.OpenDialogHandler.Open();
+
+            if (path != null)
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(path);
+                Document doc = new Document(sr.ReadToEnd(), path);
+                sr.Close();
+                return doc;
+            }
+            return null;
+        }
     }
 }

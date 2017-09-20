@@ -45,13 +45,10 @@ namespace Markdown_Buddy
         /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Opens a document for editing
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            Document doc = Document.Open();
+            if (doc != null)
             {
-                System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
-                Document doc = new Document(sr.ReadToEnd(), openFileDialog1.FileName);
                 editor.UpdateDocument(doc);
-                sr.Close();
             }
         }
 
