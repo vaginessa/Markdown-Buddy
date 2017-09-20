@@ -56,7 +56,8 @@ namespace Markdown_Buddy
         /// <param name="e"></param>
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            editor.CloseRequested();
+            editor.UpdateDocument(new Document(null));
         }
 
         /// <summary>
