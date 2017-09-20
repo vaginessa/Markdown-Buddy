@@ -77,7 +77,7 @@ namespace Markdown_Buddy.Core
         public void CloseRequested()
         {
             // Ask to save unsaved changes
-            if (unsavedChanges)
+            if (unsavedChanges && CurrentDocument.Text != "")
             {
                 var confirmDialog = MessageBox.Show("Save changes before closing?",
                     "Unsaved Changes", MessageBoxButtons.YesNo);
