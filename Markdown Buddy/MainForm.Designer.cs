@@ -38,9 +38,11 @@
             this.markdownSplitContainer = new System.Windows.Forms.SplitContainer();
             this.editorPane = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.markdownPreviewPane = new System.Windows.Forms.WebBrowser();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.markdownSplitContainer)).BeginInit();
             this.markdownSplitContainer.Panel1.SuspendLayout();
+            this.markdownSplitContainer.Panel2.SuspendLayout();
             this.markdownSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +116,10 @@
             // markdownSplitContainer.Panel1
             // 
             this.markdownSplitContainer.Panel1.Controls.Add(this.editorPane);
+            // 
+            // markdownSplitContainer.Panel2
+            // 
+            this.markdownSplitContainer.Panel2.Controls.Add(this.markdownPreviewPane);
             this.markdownSplitContainer.Size = new System.Drawing.Size(917, 655);
             this.markdownSplitContainer.SplitterDistance = 517;
             this.markdownSplitContainer.TabIndex = 1;
@@ -132,6 +138,15 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // markdownPreviewPane
+            // 
+            this.markdownPreviewPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.markdownPreviewPane.Location = new System.Drawing.Point(0, 0);
+            this.markdownPreviewPane.MinimumSize = new System.Drawing.Size(20, 20);
+            this.markdownPreviewPane.Name = "markdownPreviewPane";
+            this.markdownPreviewPane.Size = new System.Drawing.Size(396, 655);
+            this.markdownPreviewPane.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,6 +161,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.markdownSplitContainer.Panel1.ResumeLayout(false);
+            this.markdownSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.markdownSplitContainer)).EndInit();
             this.markdownSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -165,6 +181,7 @@
         private System.Windows.Forms.ToolStripMenuItem togglePreviewToolStripMenuItem;
         private System.Windows.Forms.RichTextBox editorPane;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.WebBrowser markdownPreviewPane;
     }
 }
 

@@ -78,5 +78,14 @@ namespace Markdown_Buddy.Core
             }
         }
 
+        /// <summary>
+        /// Gets the text of the current document
+        /// </summary>
+        /// <returns>The text of the current document</returns>
+        public string GetText()
+        {
+            return CurrentDocument.Text;
+        }
+
     }
 }

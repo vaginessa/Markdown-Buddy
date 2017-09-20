@@ -12,10 +12,16 @@ namespace Markdown_Buddy
         /// </summary>
         private Editor editor = new Editor();
 
+        /// <summary>
+        /// The markdown preview controller
+        /// </summary>
+        private MarkdownPreview preview = new MarkdownPreview();
+
         public MainForm()
         {
             InitializeComponent();
             editor.SetViewPane(editorPane);
+            preview.SetMarkdownPreviewPane(markdownPreviewPane);
 
             // Create a default, empty document
             editor.UpdateDocument(new Document(null));
@@ -87,6 +93,12 @@ namespace Markdown_Buddy
         private void editorPane_TextChanged(object sender, EventArgs e)
         {
             editor.TextChangedCallback();
+
+            // Update the preview
+            if (!markdownSplitContainer.Panel2Collapsed)
+            {
+                preview.UpdatePreview(editor.GetText());
+            }
         }
 
         /// <summary>
