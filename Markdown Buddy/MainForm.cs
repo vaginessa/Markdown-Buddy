@@ -32,6 +32,7 @@ namespace Markdown_Buddy
         /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            editor.CloseRequested();
             Application.Exit();
         }
 
@@ -89,6 +90,16 @@ namespace Markdown_Buddy
         private void editorPane_TextChanged(object sender, EventArgs e)
         {
             editor.TextChangedCallback();
+        }
+
+        /// <summary>
+        /// Handles the form closing event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            editor.CloseRequested();
         }
     }
 }

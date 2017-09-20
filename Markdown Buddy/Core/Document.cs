@@ -47,5 +47,29 @@ namespace Markdown_Buddy.Core
             this.Text = text;
             this.Path = path;
         }
+
+        /// <summary>
+        /// Saves the document to disk
+        /// </summary>
+        public void Save()
+        {
+            if (this.Path != null)
+            {
+                // Save to original path
+                this.write(this.Path);
+            } else
+            {
+                // We need to prompt for a save path
+            }
+        }
+
+        /// <summary>
+        /// Writes all text to file on disk
+        /// </summary>
+        /// <param name="path"> The path to write to</param>
+        private void write(string path)
+        {
+            System.IO.File.WriteAllText(path, this.Text);
+        }
     }
 }

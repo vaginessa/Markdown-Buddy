@@ -55,6 +55,7 @@ namespace Markdown_Buddy.Core
         public void TextChangedCallback()
         {
             unsavedChanges = true;
+            CurrentDocument.Text = editorPane.Text;
         }
 
         /// <summary>
@@ -63,6 +64,23 @@ namespace Markdown_Buddy.Core
         public void Refresh()
         {
             editorPane.Text = CurrentDocument.Text;
+        }
+
+        /// <summary>
+        /// Handles end cleanup when a close is requested
+        /// </summary>
+        public void CloseRequested()
+        {
+            // Ask to save unsaved changes
+            if (unsavedChanges)
+            {
+                var confirmDialog = MessageBox.Show("Save changes before closing?",
+                    "Unsaved Changes", MessageBoxButtons.YesNo);
+                if (confirmDialog == DialogResult.Yes)
+                {
+                    CurrentDocument.Save();
+                }
+            }
         }
 
     }
