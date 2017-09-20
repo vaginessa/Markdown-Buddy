@@ -17,6 +17,7 @@ namespace Markdown_Buddy.Core.GUI
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Title = "Save Document";
             dialog.Filter = "Markdown Files | *.md,*.markdown,*.mdown,*.mkdn,*.mkd,*.mdwn,*.mdtxt,*.mdtext,*.text,*.Rmd | Text Files | *.txt | All Files | *.*";
+            dialog.DefaultExt = ".md";
             dialog.ShowDialog();
 
             return dialog.FileName;
