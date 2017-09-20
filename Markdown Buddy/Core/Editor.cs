@@ -62,6 +62,14 @@ namespace Markdown_Buddy.Core
         }
 
         /// <summary>
+        /// Saves the current document
+        /// </summary>
+        public void Save()
+        {
+            CurrentDocument.Save();
+        }
+
+        /// <summary>
         /// Handles end cleanup when a close is requested
         /// </summary>
         public void CloseRequested()
@@ -73,7 +81,7 @@ namespace Markdown_Buddy.Core
                     "Unsaved Changes", MessageBoxButtons.YesNo);
                 if (confirmDialog == DialogResult.Yes)
                 {
-                    CurrentDocument.Save();
+                    this.Save();
                 }
             }
         }

@@ -110,5 +110,15 @@ namespace Markdown_Buddy
         {
             editor.CloseRequested();
         }
+
+        /// <summary>
+        /// Handles save button file menu click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editor.Save();
+        }
     }
 }
