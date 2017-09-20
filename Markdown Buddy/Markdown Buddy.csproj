@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Editor.cs" />
-    <Compile Include="Core\Document.cs" />
+    <Compile Include="Core\GUI\Editor.cs" />
+    <Compile Include="Core\IO\Document.cs" />
     <Compile Include="Core\GUI\SaveDialogHandler.cs" />
     <Compile Include="Core\IO\SaveHandler.cs" />
-    <Compile Include="Core\MarkdownPreview.cs" />
+    <Compile Include="Core\GUI\MarkdownPreview.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
