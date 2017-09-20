@@ -23,6 +23,9 @@ namespace Markdown_Buddy
         {
             InitializeComponent();
             editor.SetViewPane(editorPane);
+
+            // Create a default, empty document
+            editor.UpdateDocument(new Document(null));
         }
 
         /// <summary>

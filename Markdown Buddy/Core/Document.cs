@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Markdown_Buddy.Core
 {
@@ -60,6 +61,14 @@ namespace Markdown_Buddy.Core
             } else
             {
                 // We need to prompt for a save path
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Save Document";
+                saveFileDialog.ShowDialog();
+
+                if (saveFileDialog.FileName != "")
+                {
+                    this.write(saveFileDialog.FileName);
+                }
             }
         }
 
