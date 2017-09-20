@@ -46,7 +46,7 @@ namespace Markdown_Buddy
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
-                Document doc = new Document(sr.ReadToEnd());
+                Document doc = new Document(sr.ReadToEnd(), openFileDialog1.FileName);
                 editor.UpdateDocument(doc);
                 sr.Close();
             }
@@ -79,6 +79,16 @@ namespace Markdown_Buddy
                 markdownSplitContainer.Panel2Collapsed = true;
                 markdownSplitContainer.Panel2.Hide();
             }
+        }
+
+        /// <summary>
+        /// Handles the text change event for the editor pane
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void editorPane_TextChanged(object sender, EventArgs e)
+        {
+            editor.TextChangedCallback();
         }
     }
 }

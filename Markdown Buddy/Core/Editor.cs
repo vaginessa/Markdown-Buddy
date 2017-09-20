@@ -13,6 +13,8 @@ namespace Markdown_Buddy.Core
     class Editor
     {
 
+        private bool unsavedChanges = false;
+
         /// <summary>
         /// reference to the editor pane
         /// </summary>
@@ -45,6 +47,14 @@ namespace Markdown_Buddy.Core
         {
             this.CurrentDocument = document;
             this.Refresh();
+        }
+
+        /// <summary>
+        /// Callback for when text in our editor is changed
+        /// </summary>
+        public void TextChangedCallback()
+        {
+            unsavedChanges = true;
         }
 
         /// <summary>
