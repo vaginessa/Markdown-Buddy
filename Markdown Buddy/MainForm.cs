@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Markdown_Buddy
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace Markdown_Buddy
         /// </summary>
         private Editor editor = new Editor();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             editor.SetViewPane(editorPane);
