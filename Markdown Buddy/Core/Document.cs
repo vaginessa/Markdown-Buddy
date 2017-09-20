@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Markdown_Buddy.Core.IO;
+using System.Windows.Forms;
 
 namespace Markdown_Buddy.Core
 {
@@ -49,31 +50,7 @@ namespace Markdown_Buddy.Core
         /// </summary>
         public void Save()
         {
-            if (this.Path != null)
-            {
-                // Save to original path
-                this.write(this.Path);
-            } else
-            {
-                // We need to prompt for a save path
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Title = "Save Document";
-                saveFileDialog.ShowDialog();
-
-                if (saveFileDialog.FileName != "")
-                {
-                    this.write(saveFileDialog.FileName);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Writes all text to file on disk
-        /// </summary>
-        /// <param name="path"> The path to write to</param>
-        private void write(string path)
-        {
-            System.IO.File.WriteAllText(path, this.Text);
+            SaveHandler.SaveString(this.Text, this.Path);
         }
     }
 }

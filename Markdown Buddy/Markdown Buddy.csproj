@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Core\Editor.cs" />
     <Compile Include="Core\Document.cs" />
+    <Compile Include="Core\GUI\SaveDialogHandler.cs" />
+    <Compile Include="Core\IO\SaveHandler.cs" />
     <Compile Include="Core\MarkdownPreview.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

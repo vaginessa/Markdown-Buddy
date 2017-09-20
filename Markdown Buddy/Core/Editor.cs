@@ -67,6 +67,7 @@ namespace Markdown_Buddy.Core
         public void Save()
         {
             CurrentDocument.Save();
+            unsavedChanges = false;
         }
 
         /// <summary>
