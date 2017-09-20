@@ -33,9 +33,9 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.markdownSplitContainer = new System.Windows.Forms.SplitContainer();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.togglePreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markdownSplitContainer = new System.Windows.Forms.SplitContainer();
             this.editorPane = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -68,6 +68,7 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
@@ -75,6 +76,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
@@ -85,6 +87,23 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.togglePreviewToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // togglePreviewToolStripMenuItem
+            // 
+            this.togglePreviewToolStripMenuItem.Name = "togglePreviewToolStripMenuItem";
+            this.togglePreviewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.P)));
+            this.togglePreviewToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.togglePreviewToolStripMenuItem.Text = "Toggle Preview";
+            this.togglePreviewToolStripMenuItem.Click += new System.EventHandler(this.togglePreviewToolStripMenuItem_Click);
             // 
             // markdownSplitContainer
             // 
@@ -98,21 +117,6 @@
             this.markdownSplitContainer.Size = new System.Drawing.Size(917, 655);
             this.markdownSplitContainer.SplitterDistance = 517;
             this.markdownSplitContainer.TabIndex = 1;
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.togglePreviewToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // togglePreviewToolStripMenuItem
-            // 
-            this.togglePreviewToolStripMenuItem.Name = "togglePreviewToolStripMenuItem";
-            this.togglePreviewToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.togglePreviewToolStripMenuItem.Text = "Toggle Preview";
-            this.togglePreviewToolStripMenuItem.Click += new System.EventHandler(this.togglePreviewToolStripMenuItem_Click);
             // 
             // editorPane
             // 
