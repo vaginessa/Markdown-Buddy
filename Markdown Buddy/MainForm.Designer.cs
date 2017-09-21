@@ -39,7 +39,6 @@
             this.markdownSplitContainer = new System.Windows.Forms.SplitContainer();
             this.editorPane = new System.Windows.Forms.RichTextBox();
             this.markdownPreviewPane = new System.Windows.Forms.WebBrowser();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.markdownSplitContainer)).BeginInit();
             this.markdownSplitContainer.Panel1.SuspendLayout();
@@ -153,10 +152,6 @@
             this.markdownPreviewPane.Size = new System.Drawing.Size(396, 655);
             this.markdownPreviewPane.TabIndex = 0;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,7 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem togglePreviewMenuItem;
         private System.Windows.Forms.RichTextBox editorPane;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.WebBrowser markdownPreviewPane;
         private System.Windows.Forms.ToolStripMenuItem saveMenuItem;
     }
