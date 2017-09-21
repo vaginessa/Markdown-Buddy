@@ -28,58 +28,71 @@ namespace Markdown_Buddy
         }
 
         /// <summary>
-        /// Handles the exit menu item from the file menu
+        /// Handles click event for menu items
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="sender">The sender</param>
+        /// <param name="e">The event args</param>
+        private void toolstripMenuItem_Click(object sender, EventArgs e)
         {
-            editor.CloseRequested();
-            Application.Exit();
-        }
-
-        /// <summary>
-        /// Handles the open menu item click within the file menu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Document doc = Document.Open();
-            if (doc != null)
+            string menuItem = ((ToolStripMenuItem)sender).Name;
+            switch (menuItem)
             {
-                editor.UpdateDocument(doc);
+                ////
+                // File Menu
+                ////
+
+                // File->New
+                case "newMenuItem":
+                    editor.CloseRequested();
+                    editor.UpdateDocument(new Document(null));
+                    break;
+                // File->Open
+                case "openMenuItem":
+                    Document doc = Document.Open();
+                    if (doc != null)
+                    {
+                        editor.UpdateDocument(doc);
+                    }
+                    break;
+                // File->Save
+                case "saveMenuItem":
+                    editor.Save();
+                    break;
+                // File->Exit
+                case "exitMenuItem":
+                    editor.CloseRequested();
+                    Application.Exit();
+                    break;
+
+                ////
+                // View Menu
+                ////
+
+                // View->Toggle Preview
+                case "togglePreviewMenuItem":
+                    // Toggles the visibility of the preview pane
+                    if (markdownSplitContainer.Panel2Collapsed)
+                    {
+                        markdownSplitContainer.Panel2Collapsed = false;
+                        markdownSplitContainer.Panel2.Show();
+                    }
+                    else
+                    {
+                        markdownSplitContainer.Panel2Collapsed = true;
+                        markdownSplitContainer.Panel2.Hide();
+                    }
+                    break;
             }
         }
 
         /// <summary>
-        /// Handles the new menu item click in the file menu
+        /// Handles the form closing event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             editor.CloseRequested();
-            editor.UpdateDocument(new Document(null));
-        }
-
-        /// <summary>
-        /// Handles the toggle preview menu item click in View menu
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void togglePreviewToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Toggles the visibility of the preview pane
-            if (markdownSplitContainer.Panel2Collapsed)
-            {
-                markdownSplitContainer.Panel2Collapsed = false;
-                markdownSplitContainer.Panel2.Show();
-            } else
-            {
-                markdownSplitContainer.Panel2Collapsed = true;
-                markdownSplitContainer.Panel2.Hide();
-            }
         }
 
         /// <summary>
@@ -98,24 +111,5 @@ namespace Markdown_Buddy
             }
         }
 
-        /// <summary>
-        /// Handles the form closing event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            editor.CloseRequested();
-        }
-
-        /// <summary>
-        /// Handles save button file menu click event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            editor.Save();
-        }
     }
 }
