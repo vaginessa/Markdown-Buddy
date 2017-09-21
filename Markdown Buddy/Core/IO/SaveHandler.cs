@@ -21,6 +21,8 @@ namespace Markdown_Buddy.Core.IO
                 if (getPath != "")
                     // TODO: Fix crash when no path selected!
                     path = getPath;
+                else
+                    return;
             }
 
             System.IO.File.WriteAllText(path, text);
