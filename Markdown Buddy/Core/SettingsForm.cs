@@ -1,5 +1,6 @@
 ﻿using Markdown_Buddy.Properties;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Markdown_Buddy.Core
@@ -33,9 +34,14 @@ namespace Markdown_Buddy.Core
         /// </summary>
         private void loadFontSettings()
         {
+            // Update display labels
             lblFontValue.Text = Settings.Default.font;
             lblFontSizeValue.Text = Settings.Default.fontSize.ToString();
             lblFontStyleValue.Text = Settings.Default.fontStyle;
+
+            // Update settings in the font dialog
+            Font font = new Font(new FontFamily(Settings.Default.font), Settings.Default.fontSize);
+            fontDialog.Font = font;
         }
 
         /// <summary>
