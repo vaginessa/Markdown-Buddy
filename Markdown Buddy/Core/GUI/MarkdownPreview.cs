@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Markdown_Buddy.Properties;
+using System.Windows.Forms;
 
 namespace Markdown_Buddy.Core
 {
@@ -25,7 +26,10 @@ namespace Markdown_Buddy.Core
         /// <param name="text">The markdown text to preview</param>
         public void UpdatePreview(string text)
         {
-            markdownPreviewPane.DocumentText = this.generatePreview(text);
+            string preview = "<style>*{font-family: " + Settings.Default.font + "; font-size:" + Settings.Default.fontSize + "pt;}</style>";
+            preview += text;
+
+            markdownPreviewPane.DocumentText = this.generatePreview(preview);
         }
 
         /// <summary>
