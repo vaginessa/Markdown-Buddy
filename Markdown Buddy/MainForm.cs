@@ -65,6 +65,16 @@ namespace Markdown_Buddy
                     break;
 
                 ////
+                // Edit Menu
+                ////
+
+                // Edit->Settings
+                case "settingsMenuItem":
+                    SettingsForm settingsForm = new SettingsForm();
+                    settingsForm.Show(this);
+                    break;
+
+                ////
                 // View Menu
                 ////
 
