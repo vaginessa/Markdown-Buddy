@@ -6,6 +6,12 @@ namespace Markdown_Buddy.Core
 {
     public partial class SettingsForm : Form
     {
+        /// <summary>
+        /// Settings changed event delegate
+        /// </summary>
+        public delegate void SettingsChangedEvent();
+        public SettingsChangedEvent SettingsChanged;
+
         public SettingsForm()
         {
             InitializeComponent();
@@ -73,6 +79,7 @@ namespace Markdown_Buddy.Core
         private void btnSave_Click(object sender, EventArgs e)
         {
             Settings.Default.Save();
+            SettingsChanged();
             this.Close();
         }
     }

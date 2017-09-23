@@ -1,5 +1,7 @@
 ﻿using Markdown_Buddy.Core;
+using Markdown_Buddy.Properties;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Markdown_Buddy
@@ -23,8 +25,29 @@ namespace Markdown_Buddy
             editor.SetViewPane(editorPane);
             preview.SetMarkdownPreviewPane(markdownPreviewPane);
 
+            // Load settings
+            this.settingsChanged();
+
             // Create a default, empty document
             editor.UpdateDocument(new Document(null));
+        }
+
+        /// <summary>
+        /// Triggered when settings change
+        /// </summary>
+        private void settingsChanged()
+        {
+            this.updateFont();
+        }
+
+        /// <summary>
+        /// Updates the font settings.
+        /// </summary>
+        private void updateFont()
+        {
+            // Adjust editor font
+            Font editorFont = new Font(new FontFamily(Settings.Default.font), Settings.Default.fontSize);
+            this.editorPane.Font = editorFont;
         }
 
         /// <summary>
@@ -71,6 +94,7 @@ namespace Markdown_Buddy
                 // Edit->Settings
                 case "settingsMenuItem":
                     SettingsForm settingsForm = new SettingsForm();
+                    settingsForm.SettingsChanged += settingsChanged;
                     settingsForm.Show(this);
                     break;
 
