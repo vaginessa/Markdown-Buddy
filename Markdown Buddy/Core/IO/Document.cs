@@ -48,9 +48,12 @@ namespace Markdown_Buddy.Core
         /// <summary>
         /// Saves the document to disk
         /// </summary>
-        public void Save()
+        public void Save(bool saveAs)
         {
-            SaveHandler.SaveString(this.Text, this.Path);
+            if (!saveAs)
+                SaveHandler.SaveString(this.Text, this.Path);
+            else
+                SaveHandler.SaveString(this.Text, null);
         }
 
         /// <summary>

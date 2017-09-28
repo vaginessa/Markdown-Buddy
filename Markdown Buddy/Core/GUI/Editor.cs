@@ -65,9 +65,9 @@ namespace Markdown_Buddy.Core
         /// <summary>
         /// Saves the current document
         /// </summary>
-        public void Save()
+        public void Save(bool saveAs=false)
         {
-            CurrentDocument.Save();
+            CurrentDocument.Save(saveAs);
             unsavedChanges = false;
         }
 

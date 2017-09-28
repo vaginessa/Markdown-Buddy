@@ -81,6 +81,10 @@ namespace Markdown_Buddy
                 case "saveMenuItem":
                     editor.Save();
                     break;
+                // File->Save As
+                case "saveAsMenuItem":
+                    editor.Save(true);
+                    break;
                 // File->Exit
                 case "exitMenuItem":
                     editor.CloseRequested();
