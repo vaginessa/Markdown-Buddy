@@ -27,7 +27,8 @@ namespace Markdown_Buddy.Core
         public void UpdatePreview(string text)
         {
             string preview = "<style>*{font-family: " + Settings.Default.font + "; font-size:" + Settings.Default.fontSize + "pt;}</style>";
-            preview += text;
+            string compiledMd = this.generatePreview(text);
+            preview += compiledMd;
 
             markdownPreviewPane.DocumentText = this.generatePreview(preview);
         }
