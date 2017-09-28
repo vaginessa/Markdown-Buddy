@@ -9,11 +9,17 @@ namespace Markdown_Buddy.Core.IO
     {
 
         /// <summary>
+        /// Document saved event delegate
+        /// </summary>
+        public delegate void DocumentSavedEvent(string path);
+        public DocumentSavedEvent DocumentSaved;
+
+        /// <summary>
         /// Saves a string to given path
         /// </summary>
         /// <param name="text">The string to write</param>
         /// <param name="path">The path to write to</param>
-        public static void SaveString(string text, string path)
+        public void SaveString(string text, string path)
         {
             if (path == null)
             {
@@ -26,6 +32,9 @@ namespace Markdown_Buddy.Core.IO
             }
 
             System.IO.File.WriteAllText(path, text);
+
+            // Emit the document saved signal
+            DocumentSaved(path);
         }
 
     }

@@ -5,6 +5,7 @@ namespace Markdown_Buddy.Core
 {
     class Document
     {
+        
         /// <summary>
         /// The text stored in this document
         /// </summary>
@@ -50,10 +51,23 @@ namespace Markdown_Buddy.Core
         /// </summary>
         public void Save(bool saveAs)
         {
+            // Setup the save handler
+            SaveHandler saveHandler = new SaveHandler();
+            saveHandler.DocumentSaved += documentSaved;
+
             if (!saveAs)
-                SaveHandler.SaveString(this.Text, this.Path);
+                saveHandler.SaveString(this.Text, this.Path);
             else
-                SaveHandler.SaveString(this.Text, null);
+                saveHandler.SaveString(this.Text, null);
+        }
+
+        /// <summary>
+        /// Callback for the DocumentSaved event delegate triggered by the SaveHandler class.
+        /// Used to update the documents path
+        /// </summary>
+        public void documentSaved(string path)
+        {
+            this.Path = path;
         }
 
         /// <summary>

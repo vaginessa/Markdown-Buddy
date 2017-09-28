@@ -7,7 +7,9 @@ namespace Markdown_Buddy.Core
     /// </summary>
     class Editor
     {
-
+        /// <summary>
+        /// Tracks rather the document has unsaved changes
+        /// </summary>
         private bool unsavedChanges = false;
 
         /// <summary>
