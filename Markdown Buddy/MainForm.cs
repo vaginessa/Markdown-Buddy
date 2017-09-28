@@ -85,21 +85,16 @@ namespace Markdown_Buddy
                 case "saveAsMenuItem":
                     editor.Save(true);
                     break;
-                // File->Exit
-                case "exitMenuItem":
-                    editor.CloseRequested();
-                    Application.Exit();
-                    break;
-
-                ////
-                // Edit Menu
-                ////
-
-                // Edit->Settings
+                // File->Settings
                 case "settingsMenuItem":
                     SettingsForm settingsForm = new SettingsForm();
                     settingsForm.SettingsChanged += settingsChanged;
                     settingsForm.Show(this);
+                    break;
+                // File->Exit
+                case "exitMenuItem":
+                    editor.CloseRequested();
+                    Application.Exit();
                     break;
 
                 ////
