@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Markdown_Buddy.Core.Util;
+using System.Windows.Forms;
 
 namespace Markdown_Buddy.Core
 {
@@ -97,6 +98,38 @@ namespace Markdown_Buddy.Core
         public string GetText()
         {
             return CurrentDocument.Text;
+        }
+
+        /// <summary>
+        /// Inserts into the editor based on a code
+        /// </summary>
+        /// <param name="code">Signifies what to insert I.E. Bold, Italic, etc.</param>
+        public void insert(string code)
+        {
+            switch (code)
+            {
+                case "bold":
+                    editorPane.SelectedText = TextUtil.InsertBeginningEnd(editorPane.SelectedText, "**");
+                    break;
+                case "italic":
+                    editorPane.SelectedText = TextUtil.InsertBeginningEnd(editorPane.SelectedText, "*");
+                    break;
+                case "h1":
+                    editorPane.SelectedText = TextUtil.InsertBeginning(editorPane.SelectedText, "# ");
+                    break;
+                case "h2":
+                    editorPane.SelectedText = TextUtil.InsertBeginning(editorPane.SelectedText, "## ");
+                    break;
+                case "h3":
+                    editorPane.SelectedText = TextUtil.InsertBeginning(editorPane.SelectedText, "### ");
+                    break;
+                case "h4":
+                    editorPane.SelectedText = TextUtil.InsertBeginning(editorPane.SelectedText, "#### ");
+                    break;
+                case "h5":
+                    editorPane.SelectedText = TextUtil.InsertBeginning(editorPane.SelectedText, "##### ");
+                    break;
+            }
         }
 
     }

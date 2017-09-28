@@ -98,6 +98,33 @@ namespace Markdown_Buddy
                     break;
 
                 ////
+                // Insert Menu
+                ////
+
+                // Insert->Bold
+                case "boldMenuItem":
+                    editor.insert("bold");
+                    break;
+                case "italicMenuItem":
+                    editor.insert("italic");
+                    break;
+                case "h1MenuItem":
+                    editor.insert("h1");
+                    break;
+                case "h2MenuItem":
+                    editor.insert("h2");
+                    break;
+                case "h3MenuItem":
+                    editor.insert("h3");
+                    break;
+                case "h4MenuItem":
+                    editor.insert("h4");
+                    break;
+                case "h5MenuItem":
+                    editor.insert("h5");
+                    break;
+
+                ////
                 // View Menu
                 ////
 
